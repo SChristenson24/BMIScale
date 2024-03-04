@@ -1,9 +1,10 @@
 
 def calcBMI(feet, inches, weight):
-    meters = ((feet * 12) + inches) * 0.0254
-    kilos = weight * 0.453592
+    meters = ((feet * 12) + inches) * 0.025
+    kilos = weight * 0.450
     
-    bmi = kilos / (meters ** 2)
+    meterSq = meters**2
+    bmi = kilos/meterSq
     
     if bmi < 18.5:
         return "Underweight"

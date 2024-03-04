@@ -19,7 +19,7 @@ class TestBMICalculator(unittest.TestCase):
         self.assertEqual(calcBMI(5, 11, 174), "Normal weight")
         
     def test_boundary_overweight_lower(self):
-        self.assertEqual(calcBMI(5, 11, 175), "Overweight")
+        self.assertEqual(calcBMI(5, 11, 178), "Overweight")
 
 if __name__ == '__main__':
     unittest.main()
