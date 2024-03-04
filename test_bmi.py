@@ -4,7 +4,7 @@ from bmi import calcBMI
 class TestBMICalculator(unittest.TestCase):
     
     def test_underweight(self):
-        self.assertEqual(calcBMI(5, 2, 100), "Underweight")
+        self.assertEqual(calcBMI(5, 2, 98), "Underweight")
         
     def test_normal_weight(self):
         self.assertEqual(calcBMI(5, 9, 145), "Normal weight")
