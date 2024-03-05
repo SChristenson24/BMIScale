@@ -11,7 +11,7 @@ class TestBMICalculator(unittest.TestCase):
         
     def test_overweight(self):
         self.assertEqual(calcBMI(5, 6, 180), "Overweight")
-    #failed
+        
     def test_obese(self):
         self.assertEqual(calcBMI(5, 3, 200), "Obese")
         
