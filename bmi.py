@@ -1,25 +1,26 @@
-
 def calcBMI(feet, inches, weight):
-    meters = ((feet * 12) + inches) * 0.025
-    kilos = weight * 0.450
+    if feet == 0 and inches == 0:
+        return "Invalid input: Height cannot be zero"
+    elif weight == 0:
+        return "Invalid input: Weight cannot be zero"
+    
+    meters = ((feet * 12) + inches) * 0.0254
+    kilos = weight * 0.453592
     
     meterSq = meters**2
-    bmi = kilos/meterSq
+    bmi = kilos / meterSq
+
+    print(f"\nBMI: {bmi:.1f}")
     
     if bmi < 18.5:
-        print (f"\nBMI: {bmi}")
         return "Underweight"
-    elif 18.5 <= bmi <= 24.9:
-        print (f"\nBMI: {bmi}")
+    elif 18.5 <= bmi < 25:
         return "Normal weight"
-    elif 25 <= bmi <= 29.9:
-        print (f"\nBMI: {bmi}")
+    elif 25 <= bmi < 30:
         return "Overweight"
     else:
-        print (f"\nBMI: {bmi}")
         return "Obese"
-
-
+    
 print("Please provide your height in feet and inches (Ex. 5 3): ")
 f = float(input())
 i = float(input())
@@ -28,4 +29,4 @@ print("\nPlease provide your weight in lbs: ")
 w = float(input())
 
 result = calcBMI(f, i, w)
-print("\n" + result)
+print("\n" + result + "\n")
