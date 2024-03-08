@@ -64,8 +64,9 @@ __bmi.py__
 
 Input:
 ```
-Please provide your height in feet and inches (Ex. 5 3): 
+Please provide your height in feet (Ex. if 5' 3'', input 5)
 5
+Please provide your height in inches (Ex. if 5' 3'', input 3)
 2
 
 Please provide your weight in lbs: 
@@ -83,8 +84,9 @@ __test_bmi.py__
 
 Input:
 ```
-Please provide your height in feet and inches (Ex. 5 3): 
+Please provide your height in feet (Ex. if 5' 3'', input 5)
 5
+Please provide your height in inches (Ex. if 5' 3'', input 3)
 2
 
 Please provide your weight in lbs: 
@@ -98,16 +100,20 @@ BMI: 21.9
 Normal weight
 
 ..
-BMI: 18.6
+BMI: 18.514150494967655
 .
-BMI: 30.1
+BMI: 24.998009107129324
 .
-BMI: 25.2
+BMI: 30.01714062317013
 .
-BMI: 18.4
+BMI: 25.01753880174427
+.
+BMI: 29.997610928555186
+.
+BMI: 18.49462080035271
 .
 ----------------------------------------------------------------------
-Ran 6 tests in 0.000s
+Ran 8 tests in 0.000s
 
 OK
 ```
