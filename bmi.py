@@ -14,7 +14,7 @@ def calcBMI(feet, inches, weight):
     
     if bmi < 18.5:
         return "Underweight"
-    elif 18.6 <= bmi < 25:
+    elif bmi < 25:
         return "Normal weight"
     elif bmi < 30.0:
         return "Overweight"
@@ -22,8 +22,9 @@ def calcBMI(feet, inches, weight):
         return "Obese"
 
     
-print("Please provide your height in feet and inches (Ex. 5 3): ")
+print("Please provide your height in feet (Ex. if 5' 3'', input 5)")
 f = float(input())
+print("Please provide your height in inches (Ex. if 5' 3'', input 3)")
 i = float(input())
 
 print("\nPlease provide your weight in lbs: ")
