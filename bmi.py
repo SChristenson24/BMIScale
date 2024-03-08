@@ -10,16 +10,17 @@ def calcBMI(feet, inches, weight):
     meterSq = meters**2
     bmi = kilos / meterSq
 
-    print(f"\nBMI: {bmi:.1f}")
+    print(f"\nBMI: {bmi}")
     
     if bmi < 18.5:
         return "Underweight"
-    elif 18.5 <= bmi < 25:
+    elif 18.6 <= bmi < 25:
         return "Normal weight"
-    elif 25 <= bmi < 30:
+    elif bmi < 30.0:
         return "Overweight"
     else:
         return "Obese"
+
     
 print("Please provide your height in feet and inches (Ex. 5 3): ")
 f = float(input())
