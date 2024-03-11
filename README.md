@@ -18,7 +18,7 @@ There are a couple of ways to download this application:
   ```
 - Once you are in the file location you'd like the to clone to, use this command
   ```
-  git clone https://github.com/SChristenson24/BMIScale.git)https://github.com/SChristenson24/BMIScale.git
+  git clone https://github.com/SChristenson24/BMIScale.git
   ```
 
 ## 2. Running the application
