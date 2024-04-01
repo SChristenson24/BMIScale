@@ -26,7 +26,6 @@ print("Please provide your height in feet (Ex. if 5' 3'', input 5)")
 f = float(input())
 print("Please provide your height in inches (Ex. if 5' 3'', input 3)")
 i = float(input())
-
 print("\nPlease provide your weight in lbs: ")
 w = float(input())
 
