@@ -1,4 +1,7 @@
 # How to Run:
+### Web App
+Simply visit this link: https://bmiscale.pythonanywhere.com/
+
 ### BMI Scale Python CLI Application
 
 ## 1. Downloading Application
