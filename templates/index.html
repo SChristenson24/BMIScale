@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 <body>
     <h2>BMI Calculator</h2>
-    <form method="post">
+    <form id="bmiForm">
         Feet: <input type="number" step="any" name="feet"><br>
         Inches: <input type="number" step="any" name="inches"><br>
         Weight (lbs): <input type="number" step="any" name="weight"><br>
-        <input type="submit" value="Submit">
+        <div class="sub">
+            <input type="button" value="Submit" id="submitBtn">
+        </div>
     </form>
+
+    <div id="resultOverlay" class="overlay" style="display:none;">
+        <div class="result-box">
+            <p id="resultText">Your result will show here!</p>
+            <button class="again-btn" onclick="window.location.reload();">Calculate again</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#submitBtn').click(function(e) {
+                e.preventDefault();
+                $.ajax({
+                        type: "POST",
+                        url: "/", 
+                        data: $('#bmiForm').serialize(),
+                        success: function(response) {
+                            $('#resultText').html(response.result);
+                            $('#resultOverlay').show();
+                            confetti();
+                        },
+                        error: function(xhr, status, error) {
+                            alert("An error occurred: " + error);
+                        }
+                    });
+            });
+        });
+    </script>
 </body>
 </html>
