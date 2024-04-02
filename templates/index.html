@@ -8,9 +8,9 @@
 <body>
     <h2>BMI Calculator</h2>
     <form id="bmiForm">
-        Feet: <input type="number" step="any" name="feet"><br>
-        Inches: <input type="number" step="any" name="inches"><br>
-        Weight (lbs): <input type="number" step="any" name="weight"><br>
+        Feet: <input type="number" step="any" name="feet" min="0.1"><br> <!-- Added min value -->
+        Inches: <input type="number" step="any" name="inches" min="0"><br> <!-- Allowed 0 for inches -->
+        Weight (lbs): <input type="number" step="any" name="weight" min="0.1"><br> <!-- Added min value -->
         <div class="sub">
             <input type="button" value="Submit" id="submitBtn">
         </div>
@@ -27,6 +27,20 @@
         $(document).ready(function() {
             $('#submitBtn').click(function(e) {
                 e.preventDefault();
+                const feet = $('input[name="feet"]').val();
+                const weight = $('input[name="weight"]').val();
+                const inches = $('input[name="inches"]').val();
+
+                if (!feet || !weight || !inches) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+
+                if (parseFloat(feet) <= 0 || parseFloat(weight) <= 0) {
+                    alert("Feet and weight must be greater than zero.");
+                    return;
+                }
+
                 $.ajax({
                         type: "POST",
                         url: "/", 

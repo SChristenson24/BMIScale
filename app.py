@@ -3,9 +3,9 @@ from flask import Flask, request, render_template, jsonify
 app = Flask(__name__)
 
 def calcBMI(feet, inches, weight):
-    if feet <= 0 and inches <= 0:
-        return "Invalid input: Height must be greater than zero."
-    elif weight <= 0:
+    if feet <= 0:
+        return "Invalid input: Feet must be greater than zero."
+    if weight <= 0:
         return "Invalid input: Weight must be greater than zero."
     
     meters = ((feet * 12) + inches) * 0.0254
