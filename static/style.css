@@ -18,7 +18,6 @@ input {
 }
 
 input[type="button"] {
-    padding-top: 100px;
     background-color: #5f8460; 
     color: white;
     padding: 14px 20px;
