@@ -13,13 +13,13 @@ def calcBMI(feet, inches, weight):
     bmi = kilos / (meters ** 2)
 
     if bmi < 18.5:
-        return f"BMI: {bmi:.2f} - Underweight"
+        return f"BMI: {bmi:.3f} - Underweight"
     elif bmi < 25:
-        return f"BMI: {bmi:.2f} - Normal weight"
+        return f"BMI: {bmi:.3f} - Normal weight"
     elif bmi < 30.0:
-        return f"BMI: {bmi:.2f} - Overweight"
+        return f"BMI: {bmi:.3f} - Overweight"
     else:
-        return f"BMI: {bmi:.2f} - Obese"
+        return f"BMI: {bmi:.3f} - Obese"
 
 @app.route('/', methods=['GET', 'POST'])
 def bmi_calculator():
