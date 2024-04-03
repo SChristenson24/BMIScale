@@ -14,7 +14,7 @@ jobs:
       with:
         node-version: 16.x
 
-    - name: npm install, make test-coverage
+    - name: sudo apt install, make test-coverage
       run: |
         npm install
         make test-coverage
