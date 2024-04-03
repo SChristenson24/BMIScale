@@ -14,22 +14,22 @@ jobs:
       with:
         node-version: 16.x
 
-    - name: sudo apt install, make test-coverage
+    - name: npm install, make test-coverage
       run: |
-        sudo apt install
+        npm install
         make test-coverage
 
     - name: Report Coveralls (Linux)
       if: startsWith(runner.os, 'Linux')
       run: curl -sL https://coveralls.io/coveralls-linux.tar.gz | tar -xz && ./coveralls
       env:
-        COVERALLS_REPO_TOKEN: bj3gFyEl4j6Mp6WvALwhIZPnTZ5t2kQBx
+        COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Report Coveralls (Windows)
       if: startsWith(runner.os, 'Windows')
       run: curl -sL https://github.com/coverallsapp/coverage-reporter/releases/latest/download/coveralls-windows.zip | zcat > ./coveralls.exe && ./coveralls.exe
       env:
-        COVERALLS_REPO_TOKEN: bj3gFyEl4j6Mp6WvALwhIZPnTZ5t2kQBx
+        COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Report Coveralls (macOS)
       if: startsWith(runner.os, 'macOS')
