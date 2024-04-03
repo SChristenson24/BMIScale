@@ -16,7 +16,7 @@ jobs:
 
     - name: sudo apt install, make test-coverage
       run: |
-        npm install
+        sudo apt install
         make test-coverage
 
     - name: Report Coveralls (Linux)
